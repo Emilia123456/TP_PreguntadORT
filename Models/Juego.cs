@@ -14,10 +14,24 @@ public static void InicializarJuego(){
     _cantidadPreguntasCorrectas = 0;
 }
 
-public static void ObtenerCategorias(){
+public static List<Categorias> ObtenerCategorias(){
     _categorias = BD.ObtenerCategorias();
+    return _categorias;
 }
 
-public static void ObtenerDificultades(){
+public static List<Dificultades> ObtenerDificultades(){
     _dificultades = BD.ObtenerDificultades();
+    return _dificultades;
+}
+
+public static void CargarPartida(string username, int dificultad, int categoria){
+    _preguntas = BD.ObtenerPreguntas();
+    _respuestas = BD.ObtenerRespuestas();
+}
+
+public static int ObtenerProximaPregunta(){
+    Random rnd = new Random();
+    int preguntaElegida  = rnd.Next(1, 13);
+    return preguntaElegida;
+    
 }
