@@ -29,9 +29,21 @@ public static void CargarPartida(string username, int dificultad, int categoria)
     _respuestas = BD.ObtenerRespuestas();
 }
 
-public static int ObtenerProximaPregunta(){
+public static List<Pregunta> ObtenerProximaPregunta(){
     Random rnd = new Random();
     int preguntaElegida  = rnd.Next(1, 13);
-    return preguntaElegida;
-    
+    return _preguntas[preguntaElegida];
 }
+
+public static List<Respuesta> ObtenerProximasRespuestas(int idPregunta){
+    return _respuestas[idPregunta];
+}
+
+public static bool VerificarRespuesta(int idPregunta, int idRespuesta){
+    //ver si es correcta 
+    //
+    //si lo es hay que sumar a puntaje y a cant de preg correctas
+    //y eliminar la pregunta de la lista 
+    return ;
+}
+
