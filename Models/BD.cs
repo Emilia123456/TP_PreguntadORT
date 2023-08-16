@@ -1,5 +1,6 @@
-using System.Data.SqlClient;
 using Dapper;
+using System.Data.SqlClient;
+
 public class BD{
     //conectamos el tp con la base de datos
     private static string _connectionString = @"Server=localhost; DataBase=PreguntadOrt;Trusted_Connection=True;";
@@ -28,7 +29,7 @@ public class BD{
         }
     }
 
-    public static List<Respuestas> ObtenerRespuestas(List<Pregunta> preguntas){
+    public static List<Respuestas> ObtenerRespuestas(List<Preguntas> preguntas){
         string sql = "exec sp_ObtenerRespuestas preguntas";
         using(SqlConnection db = new SqlConnection(_connectionString)){
             return db.Query<Respuestas>(sql).ToList();
