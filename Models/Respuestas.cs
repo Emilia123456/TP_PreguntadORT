@@ -9,7 +9,7 @@ public class Respuestas{
     
     }
 
-    public Respuestas(int IdRespuesta, int IdPregunta, int Opcion, string  Contenido, bool Correcta){
+    public Respuestas(int IdRespuesta, int idPregunta, int opcion, string  contenido, bool correcta){
     IdRespuesta=IdRespuesta;
     IdPregunta=idPregunta;
     Opcion=opcion;

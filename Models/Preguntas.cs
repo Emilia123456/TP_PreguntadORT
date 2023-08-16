@@ -10,8 +10,8 @@ public class Preguntas{
     
     }
 
-    public Preguntas(int IdPregunta, int IdCategoria, int IdDificultad, string Enunciado, string Foto, int IdOpcion ){
-    IdPregunta=IdPregunta;
+    public Preguntas(int idPregunta, int idCategoria, int idDificultad, string enunciado, string foto, int idOpcion ){
+    IdPregunta=idPregunta;
     IdCategoria=idCategoria;
     IdDificultad=idDificultad;
     Enunciado=enunciado;

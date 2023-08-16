@@ -8,8 +8,8 @@ public class Categorias{
     
     }
 
-    public Categorias(int IdCategoria, string Nombre ){
-    IdCategoria=idCategoria;
-    Nombre=nombre;
+    public Categorias(int idcategoria, string nombre ){
+        IdCategoria=idcategoria;
+        Nombre=nombre;
     }
 }
