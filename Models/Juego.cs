@@ -44,20 +44,13 @@ public static class Juego{
         //
         //si lo es hay que sumar a puntaje y a cant de preg correctas
         //y eliminar la pregunta de la lista 
-        bool ok;
-        if(_preguntas[idPregunta] = _respuestas[idPregunta])
-        {
-             ok=true;
+        bool ok = false;
+        if(_respuestas[idRespuesta].Correcta == true &&  idPregunta == _respuestas[idRespuesta].IdPregunta)
+        {   ok=true;
             _puntajeActual++;
             _cantidadPreguntasCorrectas++;
-
-        }else{
-            ok=false;
-           
         }
-
-
+        BD.EliminarPregunta(idPregunta);
         return ok;
     }
 }
-//hola

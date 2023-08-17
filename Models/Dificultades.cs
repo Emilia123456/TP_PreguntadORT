@@ -7,7 +7,7 @@ public class Dificultades{
     
     }
 
-    public Dificultades(int IdDificultad, string Nombre ){
+    public Dificultades(int idDificultad, string nombre ){
     IdDificultad=idDificultad;
     Nombre=nombre;
     }

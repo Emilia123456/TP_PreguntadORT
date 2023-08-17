@@ -5,8 +5,6 @@ public class BD{
     //conectamos el tp con la base de datos
     private static string _connectionString = @"Server=localhost; DataBase=PreguntadOrt;Trusted_Connection=True;";
 
-
-
     public static List<Categorias> ObtenerCategorias(){
         string sql = "exec sp_ObtenerCategorias";
         using(SqlConnection db = new SqlConnection(_connectionString)){
@@ -33,6 +31,13 @@ public class BD{
         string sql = "exec sp_ObtenerRespuestas preguntas";
         using(SqlConnection db = new SqlConnection(_connectionString)){
             return db.Query<Respuestas>(sql).ToList();
+        }
+    }
+
+    public static void EliminarPregunta(int id){
+       string SQL = "DELETE FROM Preguntas WHERE idPregunta = @id";
+        using(SqlConnection db = new SqlConnection(_connectionString)){
+        db.Execute(SQL, new{idPregunta = id});
         }
     }
 }
