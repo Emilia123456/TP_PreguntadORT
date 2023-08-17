@@ -35,6 +35,22 @@ public class HomeController : Controller
         }
     }
 
+    public IActionResult Jugar()
+    {
+        ViewBag.SigPregunta=Juego.ObtenerProximaPregunta();
+        if(Juego._preguntas!=null){
+            ViewBag.SigRespuesta=Juego.ObtenerProximasRespuestas();
+            return View("Jugar");
+        }else{
+            return View("Fin");
+        }
+    }
+
+    [HttpPost] public IActionResult VerificarRespuesta(int idPregunta, int idRespuesta){
+        ViewBag.verificado=Juego.VerificarRespuesta(idPregunta, idRespuesta);
+        return View();
+    }
+
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {
