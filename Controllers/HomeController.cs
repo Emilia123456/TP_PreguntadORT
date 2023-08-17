@@ -18,9 +18,21 @@ public class HomeController : Controller
         return View();
     }
 
-    public IActionResult Privacy()
+    public IActionResult ConfigurarJuego()
     {
+        Juego.InicializarJuego();
+        
         return View();
+    }
+
+    public IActionResult Comenzar(string username, int dificultad, int categoria)
+    {
+        Juego.CargarPartida(username, dificultad, categoria);
+        if(Juego._preguntas!=null){
+            return View("Jugar");
+        }else{
+            return View("ConfigurarJuego");
+        }
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
