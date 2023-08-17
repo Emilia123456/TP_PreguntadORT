@@ -19,7 +19,8 @@ public class BD{
             return db.Query<Dificultades>(sql).ToList();
         }
     }
-
+    
+    //falta hacer que cuando pongan opcion -1 sean todas las categorias o dificultades 
     public static List<Preguntas> ObtenerPreguntas(int dificultad, int categoria){
         string sql = "exec sp_ObtenerPreguntas dificultad, categoria";
         using(SqlConnection db = new SqlConnection(_connectionString)){

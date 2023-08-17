@@ -35,11 +35,11 @@ public class HomeController : Controller
         }
     }
 
-    public IActionResult Jugar()
+    public IActionResult Jugar(int idPregunta)
     {
         ViewBag.SigPregunta=Juego.ObtenerProximaPregunta();
         if(Juego._preguntas!=null){
-            ViewBag.SigRespuesta=Juego.ObtenerProximasRespuestas();
+            ViewBag.SigRespuesta=Juego.ObtenerProximasRespuestas(idPregunta);
             return View("Jugar");
         }else{
             return View("Fin");
