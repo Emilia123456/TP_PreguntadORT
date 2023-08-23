@@ -35,22 +35,22 @@ public static class Juego{
         return _preguntas[preguntaElegida];
     }
 
-    public static Respuestas ObtenerProximasRespuestas(int idPregunta){
+    
+    public static List<Respuestas> ObtenerProximasRespuestas(int idPregunta){
+        // crean una lista de respuestas vacia.
+        //recorren las respuestas y suman a esa lista las que sean de esta pregunta. devuelven esa lista
+        
         return _respuestas[idPregunta];
     }
 
     public static bool VerificarRespuesta(int idPregunta, int idRespuesta){
-        //ver si es correcta 
-        //
-        //si lo es hay que sumar a puntaje y a cant de preg correctas
-        //y eliminar la pregunta de la lista 
         bool ok = false;
         if(_respuestas[idRespuesta].Correcta == true &&  idPregunta == _respuestas[idRespuesta].IdPregunta)
         {   ok=true;
-            _puntajeActual++;
+            _puntajeActual=_puntajeActual+50;
             _cantidadPreguntasCorrectas++;
         }
-        BD.EliminarPregunta(idPregunta);
+        _preguntas
         return ok;
     }
 }

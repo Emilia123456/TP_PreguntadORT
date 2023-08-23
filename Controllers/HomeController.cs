@@ -45,7 +45,7 @@ public class HomeController : Controller
             return View("Fin");
         }
     }
-
+ // RESOLVER
     [HttpPost] public IActionResult VerificarRespuesta(int idPregunta, int idRespuesta){
         ViewBag.verificado=Juego.VerificarRespuesta(idPregunta, idRespuesta);
         return View();

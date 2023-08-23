@@ -2,6 +2,7 @@ using Dapper;
 using System.Data.SqlClient;
 
 public class BD{
+    //FALTAN TODOS LOS STORED PROCEDURES
     //conectamos el tp con la base de datos
     private static string _connectionString = @"Server=localhost; DataBase=PreguntadOrt;Trusted_Connection=True;";
 
@@ -35,10 +36,4 @@ public class BD{
         }
     }
 
-    public static void EliminarPregunta(int id){
-       string SQL = "DELETE FROM Preguntas WHERE idPregunta = @id";
-        using(SqlConnection db = new SqlConnection(_connectionString)){
-        db.Execute(SQL, new{idPregunta = id});
-        }
-    }
 }
