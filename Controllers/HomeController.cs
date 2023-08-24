@@ -27,6 +27,7 @@ public class HomeController : Controller
     {
         ViewBag.listaDificultades=BD.ObtenerDificultades();
         ViewBag.listaCategorias=BD.ObtenerCategorias();
+
         Juego.InicializarJuego();
            
         return View();
@@ -34,7 +35,10 @@ public class HomeController : Controller
 
     public IActionResult Comenzar(string username, int dificultad, int categoria)
     {
+       
         Juego.CargarPartida(username, dificultad, categoria);
+        ViewBag.username = username;
+        ViewBag.puntajeActual = Juego._puntajeActual;
         if(Juego._preguntas!=null){
             return View("Jugar");
         }else{

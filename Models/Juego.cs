@@ -1,6 +1,7 @@
 public static class Juego{
     public static string _username {get; set;}
     public static int _puntajeActual {get; set;}
+    public static int _cantidadPreguntas {get; set;}
     public static int _cantidadPreguntasCorrectas {get; set;}
     public static List<Preguntas> _preguntas {get; set;}
     public static List<Respuestas> _respuestas {get; set;}
@@ -11,6 +12,7 @@ public static class Juego{
     public static void InicializarJuego(){
         _username = "";
         _puntajeActual = 0;
+        _cantidadPreguntas = 0;
         _cantidadPreguntasCorrectas = 0;
     }
 
@@ -32,6 +34,7 @@ public static class Juego{
     public static Preguntas ObtenerProximaPregunta(){
         Random rnd = new Random();
         int preguntaElegida  = rnd.Next(1, 13);
+        _cantidadPreguntas++;
         return _preguntas[preguntaElegida];
     }
 
@@ -40,8 +43,13 @@ public static class Juego{
     public static List<Respuestas> ObtenerProximasRespuestas(int idPregunta){
         // crean una lista de respuestas vacia.
         //recorren las respuestas y suman a esa lista las que sean de esta pregunta. devuelven esa lista
-        
-        return _respuestas;
+        List<Respuestas> respuestas = new List <Respuestas>();
+        foreach(Respuestas resp in Juego._respuestas){
+            if(resp.idPregunta==idPregunta){
+                respuestas.Add(resp);
+            }
+        }
+        return respuestas;
    }
 
     public static bool VerificarRespuesta(int idPregunta, int idRespuesta){

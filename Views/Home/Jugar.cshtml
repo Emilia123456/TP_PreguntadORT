@@ -1,0 +1,42 @@
+
+<body class="body-juego">
+        <div class="centrador">
+          <img src="Imagenes/logo.png" alt="">
+            <div class="juego-contenedor">
+                <div class="pie-de-pagina">
+                    <h2>@ViewBag.username</h2>
+                    <h2>Puntaje actual: @ViewBag.puntajeActual</h2>
+                </div>
+                <div class="pregunta-contenedor">
+                    <h1>Pregunta 4</h1>
+                    <h2>Pregunta</h2>
+                </div>
+                            
+                <form action="VerificarRespuesta" method="post" class="form">
+                    @{
+                            foreach (Respuestas opcion in @ViewBag.SigRespuesta){
+                                <input class="form-control">
+                            }
+                        }
+                    </div>
+                </form>
+
+
+                    <form action="">
+                      <input type="button" value="Intel 9">
+                      <input type="button" value="Ryzen 5">
+                      <input type="button" value="Intel 7">
+                      <input type="button" value="AMD athlon">
+                      <div class="boton-juego">
+                          <a href="RespuestaCorrecta.html">Responder</a>
+                      </div>
+                      
+                    </form>
+                    
+                </div>
+
+            </div>
+
+        </div>
+        
+</body>
