@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\47697893\\Downloads\\hdcjk\\TP_PreguntadORT\\TP_PreguntadOrt.csproj": {}
+    "C:\\Users\\47807116\\Downloads\\TP_PreguntadORT\\TP_PreguntadOrt.csproj": {}
   },
   "projects": {
-    "C:\\Users\\47697893\\Downloads\\hdcjk\\TP_PreguntadORT\\TP_PreguntadOrt.csproj": {
+    "C:\\Users\\47807116\\Downloads\\TP_PreguntadORT\\TP_PreguntadOrt.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\47697893\\Downloads\\hdcjk\\TP_PreguntadORT\\TP_PreguntadOrt.csproj",
+        "projectUniqueName": "C:\\Users\\47807116\\Downloads\\TP_PreguntadORT\\TP_PreguntadOrt.csproj",
         "projectName": "TP_PreguntadOrt",
-        "projectPath": "C:\\Users\\47697893\\Downloads\\hdcjk\\TP_PreguntadORT\\TP_PreguntadOrt.csproj",
-        "packagesPath": "C:\\Users\\47697893\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\47697893\\Downloads\\hdcjk\\TP_PreguntadORT\\obj\\",
+        "projectPath": "C:\\Users\\47807116\\Downloads\\TP_PreguntadORT\\TP_PreguntadOrt.csproj",
+        "packagesPath": "C:\\Users\\47807116\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\47807116\\Downloads\\TP_PreguntadORT\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\47697893\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\47807116\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

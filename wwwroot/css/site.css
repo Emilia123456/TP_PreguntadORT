@@ -1,22 +1,307 @@
-html {
-  font-size: 14px;
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Nunito:wght@600&family=REM&display=swap'); 
+
+
+nav{
+  background-color: #D9E4FB;
+  display: flex;
+  padding: 10px;
+  padding-top: 30px;
+  
 }
 
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+nav p{
+  font-size: 22px;
+  color: #201454 ;
+  display: flex;
+  justify-content:flex-end;
+  margin-left: 700px;
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+
+.footer-index{
+  margin-top: 140px;
+  background-color: #ffffff;
+  display: flex;
+  padding: 20px;
+  background-size: cover;
+  margin-left: 100px;
 }
 
-html {
-  position: relative;
-  min-height: 100%;
+footer{
+  margin-top: 95px;
+  background-color: #D9E4FB;
+  display: flex;
+  padding: 20px;
+  background-size: cover;
+  padding-left: 100px;
 }
 
-body {
-  margin-bottom: 60px;
+
+footer li a, footer li p{
+  font-size: 18px;
+  color:#201454 
+  
 }
+
+
+li img{
+  height: auto;
+  width: 40px;
+}
+
+li a{
+  font-size: 22px;
+  text-decoration: none;
+  color: #201454 ;
+ 
+}
+
+li a:hover{
+  color: #67679E ;
+}
+
+.boton a{
+  font-size: 22px;
+  text-decoration: none;
+  color: #0f0830 ;
+}
+
+
+
+li{
+  display: contents;
+ justify-content: center;
+}
+
+.body-index{
+  background-image: url('/Imagenes/imagen_principal_index.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+}
+
+.body-config{
+  background-image: url('/Imagenes/imagen_menu_configuracion.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.body-fin{
+  background-image: url('/Imagenes/imagen_fondo_fin.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+.centrador{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin: 30px;
+  
+}
+
+.boton{
+  margin-top: 80px;
+}
+
+.boton a{
+  padding: 30px;
+  background-color: #7e97c1;
+  border-radius: 30px;
+}
+
+.boton a:hover{
+  background-color: #67679E;
+  border-radius: 31px;
+  color: #e7e5f1 ;
+}
+
+.boton button, .boton-juego a{
+  font-size: 22px;
+  text-decoration: none;
+  color: #0f0830 ;
+  margin-top: 40px;
+  padding: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
+  background-color: #8ea7d1;
+  border-radius: 30px;
+  border: none;
+}
+
+.boton button:hover, .boton-juego a:hover{
+  background-color: #67679E;
+  border-radius: 31px;
+  color: #e7e5f1 ;
+}
+
+.titulo h1{
+  font-size: 42px;
+  padding: 65px;
+  color: #1a0e4f;
+  font-family: 'Bree Serif', serif;
+  font-family: 'Nunito', sans-serif;
+  font-family: 'REM', sans-serif;
+ 
+}
+
+.titulo-index h1{
+  font-size: 65px;
+
+  color: #1a0e4f;
+  font-family: 'Bree Serif', serif;
+  font-family: 'Nunito', sans-serif;
+  font-family: 'REM', sans-serif;
+}
+
+.contenido-index{
+  margin: 200px;
+}
+
+.contenido-index img{
+  height: auto;
+  width: 100px;
+}
+
+.contenido-config{
+  
+  padding-top: 80px;
+  padding-left: 80px;
+  margin-top: 80px;
+  margin-left: 80px;
+  padding-bottom: 100px;
+  background-color: #edf4ff;
+  width: 1000px;
+  
+}
+
+.creditos{
+  height: 100%;
+  width: 100%;
+}
+
+.creditos-tamaño{
+  padding: 1px;
+  margin: 155px;
+}
+
+.creditos-tamaño img{
+  height: 180px;
+  width: auto;
+}
+
+
+.contenido-formulario, .contenido-checkbox{
+ 
+  display: flex;
+  justify-content:baseline;
+}
+
+
+.contenido-checkbox p{
+ font-size: 22px;
+  color: #201454 ;
+  margin-top: 10px;
+  padding: 15px;
+}
+
+
+
+.contenido-config h1{
+  font-size: 42px;
+  color: #1a0e4f;
+  font-family: 'Bree Serif', serif;
+  font-family: 'Nunito', sans-serif;
+  font-family: 'REM', sans-serif;
+}
+
+.form-control{
+  width: 21%;
+}
+
+.pie-de-pagina{
+  display: flex;
+  justify-content: center;
+}
+
+.pie-de-pagina h2{
+  padding-left: 50px;
+  padding-right: 50px;
+  text-align: center;
+  font-size: 22px;
+  color: #67679E;
+}
+
+.pregunta-contenedor h1{
+  font-size: 38px;
+  padding-top: 40px;
+  color: #1a0e4f;
+  font-family: 'Bree Serif', serif;
+  font-family: 'Nunito', sans-serif;
+  font-family: 'REM', sans-serif;
+  text-align:center; 
+ 
+}
+
+.pregunta-contenedor h2{
+  font-size: 42px;
+  padding-bottom: 40px;
+  color: #1a0e4f;
+  font-family: 'Bree Serif', serif;
+  font-family: 'Nunito', sans-serif;
+  font-family: 'REM', sans-serif;
+  text-align:center; 
+ 
+}
+
+
+
+form{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+form input, .boton-siguiente a{
+  display: flex;
+  justify-content: center;
+  margin: 7px;
+  font-size: 22px;
+  color: #201454;
+  background-color: #c3cde7;
+  border: none;
+  border-radius: 30px;
+  padding: 10px;
+  text-decoration: none;
+}
+
+form input:hover, .boton-siguiente a:hover{
+  background-color: #67679E;
+  border-radius: 31px;
+  color: #e7e5f1 ;
+  border: none;
+}
+
+.boton-juego{
+  text-align: center;
+  margin-top: 50px;
+}
+
+.juego-contenedor{
+  margin-top: 30px;
+  background-color: #edf4ff;
+  padding: 80px;
+  border-radius: 45px;
+}
+
+.centrador img{
+  height: auto;
+  width: 100px;
+}
+
+

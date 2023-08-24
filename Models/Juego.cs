@@ -36,21 +36,22 @@ public static class Juego{
     }
 
     
+
     public static List<Respuestas> ObtenerProximasRespuestas(int idPregunta){
         // crean una lista de respuestas vacia.
         //recorren las respuestas y suman a esa lista las que sean de esta pregunta. devuelven esa lista
         
-        return _respuestas[idPregunta];
-    }
+        return _respuestas;
+   }
 
     public static bool VerificarRespuesta(int idPregunta, int idRespuesta){
         bool ok = false;
-        if(_respuestas[idRespuesta].Correcta == true &&  idPregunta == _respuestas[idRespuesta].IdPregunta)
+        if(_respuestas[idRespuesta].Correcta == true &&  idPregunta == _respuestas[idRespuesta].idPregunta)
         {   ok=true;
             _puntajeActual=_puntajeActual+50;
             _cantidadPreguntasCorrectas++;
         }
-        _preguntas
+        //_preguntas;
         return ok;
     }
 }

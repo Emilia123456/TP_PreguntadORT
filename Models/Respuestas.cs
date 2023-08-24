@@ -1,6 +1,6 @@
 public class Respuestas{
-    public int IdRespuesta {get; set;}
-    public int IdPregunta {get; set;}
+    public int idRespuesta {get; set;}
+    public int idPregunta {get; set;}
     public int Opcion {get; set;}
     public string  Contenido {get; set;}
     public bool Correcta {get; set;}
@@ -9,9 +9,9 @@ public class Respuestas{
     
     }
 
-    public Respuestas(int IdRespuesta, int idPregunta, int opcion, string  contenido, bool correcta){
-    IdRespuesta=IdRespuesta;
-    IdPregunta=idPregunta;
+    public Respuestas(int idRespuesta, int idPregunta, int opcion, string  contenido, bool correcta){
+    idRespuesta=idRespuesta;
+    idPregunta=idPregunta;
     Opcion=opcion;
     Contenido=contenido;
     Correcta=correcta;

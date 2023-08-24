@@ -1,8 +1,38 @@
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Configuración";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <a href="ConfigurarJuego"> hola</a>
-</div>
+
+<body class="body-config">
+  <div class="contenido-config">
+      <form action="Comenzar" method="get" class="form">
+        <h1 class="titulo">Dificultad</h1>
+        <div class="contenido-formulario">
+        <!-- esto en realidad tiene que ser un foreach de las categorias y de las dificultades -->
+          @{
+                foreach (Dificultades dificultad in @ViewBag.listaDificultades){
+                    <div class="contenido-checkbox"> <p>@dificultad.Nombre</p><input type="radio" value=dificultad.IdDificultad required name="opcionDificultad"> </div>
+                }
+            }
+        </div>
+
+        <h1>Categoría</h1>
+        <div class="contenido-formulario">
+            @{
+                foreach (Categorias categoria in @ViewBag.listaCategorias){
+                    <div class="contenido-checkbox"> <p>@categoria.Nombre</p><input type="radio" value=@categoria.IdCategoria required name="opcionCategorias"> </div>
+                }
+            }
+
+            <h1>Username</h1>
+           <input type="text" required class="form-control">
+
+
+              <div class="boton">
+                <button type="submit" class="boton">Comenzar a jugar</button>
+              </div>
+       </form>
+  </div>
+</body>
+
+

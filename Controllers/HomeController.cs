@@ -18,10 +18,17 @@ public class HomeController : Controller
         return View();
     }
 
+        public IActionResult Creditos()
+    {
+        return View();
+    }
+
     public IActionResult ConfigurarJuego()
     {
+        ViewBag.listaDificultades=BD.ObtenerDificultades();
+        ViewBag.listaCategorias=BD.ObtenerCategorias();
         Juego.InicializarJuego();
-        
+           
         return View();
     }
 
