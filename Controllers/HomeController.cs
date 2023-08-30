@@ -40,18 +40,19 @@ public class HomeController : Controller
         ViewBag.username = username;
         ViewBag.puntajeActual = Juego._puntajeActual;
         if(Juego._preguntas!=null){
-            return View("Jugar");
+           return RedirectToAction("Jugar");
+
         }else{
             return View("ConfigurarJuego");
         }
     }
 
-    public IActionResult Jugar(int idPregunta)
+    public IActionResult Jugar()
     {
         ViewBag.SigPregunta=Juego.ObtenerProximaPregunta();
         if(Juego._preguntas!=null){
-            ViewBag.SigRespuesta=Juego.ObtenerProximasRespuestas(idPregunta);
-            return View("Jugar");
+            ViewBag.SigRespuesta=Juego.ObtenerProximasRespuestas( ViewBag.SigPregunta.idPregunta);
+            return View("Jugar");   
         }else{
             return View("Fin");
         }

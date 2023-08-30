@@ -32,10 +32,13 @@ public static class Juego{
     }
 
     public static Preguntas ObtenerProximaPregunta(){
+        int TOPE_PREGUNTAS;
+        TOPE_PREGUNTAS=15;
         Random rnd = new Random();
-        int preguntaElegida  = rnd.Next(1, 13);
+        int preguntaElegida  = rnd.Next(1, TOPE_PREGUNTAS);
         _cantidadPreguntas++;
         return _preguntas[preguntaElegida];
+        TOPE_PREGUNTAS=TOPE_PREGUNTAS-1;
     }
 
     
@@ -47,6 +50,7 @@ public static class Juego{
         foreach(Respuestas resp in Juego._respuestas){
             if(resp.idPregunta==idPregunta){
                 respuestas.Add(resp);
+                
             }
         }
         return respuestas;
@@ -56,7 +60,7 @@ public static class Juego{
         bool ok = false;
         if(_respuestas[idRespuesta].Correcta == true &&  idPregunta == _respuestas[idRespuesta].idPregunta)
         {   ok=true;
-            _puntajeActual=_puntajeActual+50;
+            _puntajeActual = _puntajeActual+50;
             _cantidadPreguntasCorrectas++;
         }
         //_preguntas;
