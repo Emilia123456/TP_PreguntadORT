@@ -24085,11 +24085,6 @@
       "FilePath": "c:\\Users\\47697893\\Downloads\\TP_PreguntadORT\\Views\\Shared\\_Layout.cshtml",
       "TargetPath": "Views\\Shared\\_Layout.cshtml",
       "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\47697893\\Downloads\\TP_PreguntadORT\\TP_PreguntadORT\\Views\\Home\\ConfigurarJuego.cshtml",
-      "TargetPath": "TP_PreguntadORT\\Views\\Home\\ConfigurarJuego.cshtml",
-      "FileKind": "mvc"
     }
   ]
 }

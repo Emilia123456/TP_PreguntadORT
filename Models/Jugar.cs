@@ -32,13 +32,12 @@ public static class Juego{
     }
 
     public static Preguntas ObtenerProximaPregunta(){
-        int TOPE_PREGUNTAS;
-        TOPE_PREGUNTAS=15;
         Random rnd = new Random();
-        int preguntaElegida  = rnd.Next(1, TOPE_PREGUNTAS);
+        int preguntaElegida  = rnd.Next(1, 16);
         _cantidadPreguntas++;
-        return _preguntas[preguntaElegida];
-        TOPE_PREGUNTAS=TOPE_PREGUNTAS-1;
+        // Tenemos que hacer que se returnee _preguntas CON EL ID, osea que el numero que le estemos pasando "preguntaElegida", sea tomado como idPregunta
+        return _preguntas.idPregunta[preguntaElegida];
+        
     }
 
     
