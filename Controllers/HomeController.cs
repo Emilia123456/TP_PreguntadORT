@@ -33,12 +33,12 @@ public class HomeController : Controller
         return View();
     }
 
-    public IActionResult Comenzar(string username, int dificultad, int categoria)
+    [HttpPost]
+    public IActionResult Comenzar(string _username, int dificultad, int categoria, int _puntajeActual)
     {
-       
-        Juego.CargarPartida(username, dificultad, categoria);
-        ViewBag.username = username;
-        ViewBag.puntajeActual = Juego._puntajeActual;
+        Juego.CargarPartida(_username, dificultad, categoria);
+        Juego._username=_username;
+        Juego._puntajeActual=_puntajeActual;
         if(Juego._preguntas!=null){
            return RedirectToAction("Jugar");
 
@@ -49,6 +49,8 @@ public class HomeController : Controller
 
     public IActionResult Jugar()
     {
+        ViewBag.username = Juego._username; 
+        ViewBag.puntajeActual = Juego._puntajeActual;
         ViewBag.SigPregunta=Juego.ObtenerProximaPregunta();
         if(Juego._preguntas!=null){
             ViewBag.SigRespuesta=Juego.ObtenerProximasRespuestas( ViewBag.SigPregunta.idPregunta);
@@ -59,6 +61,7 @@ public class HomeController : Controller
     }
  // RESOLVER
     [HttpPost] public IActionResult VerificarRespuesta(int idPregunta, int idRespuesta){
+        //verificado es un booleano que te dice si es correcta o no
         ViewBag.verificado=Juego.VerificarRespuesta(idPregunta, idRespuesta);
         return View();
     }

@@ -7,6 +7,8 @@ public static class Juego{
     public static List<Respuestas> _respuestas {get; set;}
     public static List<Categorias> _categorias {get; set;}
     public static List<Dificultades> _dificultades {get; set;}
+    public static int _cont {get; set;}
+
 
 
     public static void InicializarJuego(){
@@ -14,6 +16,7 @@ public static class Juego{
         _puntajeActual = 0;
         _cantidadPreguntas = 0;
         _cantidadPreguntasCorrectas = 0;
+        _cont=1;
     }
 
     public static List<Categorias> ObtenerCategorias(){
@@ -26,17 +29,17 @@ public static class Juego{
         return _dificultades;
     }
 
-    public static void CargarPartida(string username, int dificultad, int categoria){
+    public static void CargarPartida(string _username, int dificultad, int categoria){
         _preguntas = BD.ObtenerPreguntas(dificultad,categoria);
         _respuestas = BD.ObtenerRespuestas(_preguntas);
     }
 
     public static Preguntas ObtenerProximaPregunta(){
         Random rnd = new Random();
-        int preguntaElegida  = rnd.Next(1, 16);
+        int preguntaElegida  = rnd.Next(1, _preguntas.Count);
         _cantidadPreguntas++;
         // Tenemos que hacer que se returnee _preguntas CON EL ID, osea que el numero que le estemos pasando "preguntaElegida", sea tomado como idPregunta
-        return _preguntas.idPregunta[preguntaElegida];
+        return _preguntas[preguntaElegida];
         
     }
 
@@ -61,6 +64,7 @@ public static class Juego{
         {   ok=true;
             _puntajeActual = _puntajeActual+50;
             _cantidadPreguntasCorrectas++;
+            _cont++;
         }
         //_preguntas;
         return ok;
