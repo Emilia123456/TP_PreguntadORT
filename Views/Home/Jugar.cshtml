@@ -8,18 +8,18 @@
                     <h2>Puntaje actual: @ViewBag.puntajeActual</h2>
                 </div>
                 <div class="pregunta-contenedor">
-                    <h1>Pregunta 4</h1>
-                    <h2>@ViewBag.SigPregunta</h2>
+                    <h1>Pregunta @ViewBag.cantidadPreguntas</h1>
+                    <h2>@ViewBag.SigPregunta.Enunciado</h2>
                 </div>
                             
                 <form action="VerificarRespuesta" method="post" class="form">
                     @{
                             foreach (Respuestas opcion in @ViewBag.SigRespuesta){
-                                <input type="button" class="form-control">
+                                <input type="button" value=@opcion.Contenido >
                             }
-                        }
+                    }
                     <div class="boton">
-                        <button type="submit" class="boton">Comenzar a jugar</button>
+                        <button type="submit" class="boton">Enviar</button>
                     </div>
                 </form>
                 

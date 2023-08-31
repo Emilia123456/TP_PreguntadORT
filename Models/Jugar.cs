@@ -40,7 +40,7 @@ public static class Juego{
         _cantidadPreguntas++;
         // Tenemos que hacer que se returnee _preguntas CON EL ID, osea que el numero que le estemos pasando "preguntaElegida", sea tomado como idPregunta
         return _preguntas[preguntaElegida];
-        
+       //no returnea bien el enunciado. necesitamos que mande el capmpo enunciado del objeto (pregunta[preguntaELegida]) de una lista de objetos (_preguntas[]) 
     }
 
     
@@ -64,8 +64,9 @@ public static class Juego{
         {   ok=true;
             _puntajeActual = _puntajeActual+50;
             _cantidadPreguntasCorrectas++;
-            _cont++;
+            
         }
+        _cantidadPreguntas++;
         //_preguntas;
         return ok;
     }

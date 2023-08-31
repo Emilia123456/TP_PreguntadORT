@@ -52,8 +52,10 @@ public class HomeController : Controller
         ViewBag.username = Juego._username; 
         ViewBag.puntajeActual = Juego._puntajeActual;
         ViewBag.SigPregunta=Juego.ObtenerProximaPregunta();
+        ViewBag.cantidadPreguntas = Juego._cantidadPreguntas;
         if(Juego._preguntas!=null){
             ViewBag.SigRespuesta=Juego.ObtenerProximasRespuestas( ViewBag.SigPregunta.idPregunta);
+
             return View("Jugar");   
         }else{
             return View("Fin");
@@ -63,7 +65,9 @@ public class HomeController : Controller
     [HttpPost] public IActionResult VerificarRespuesta(int idPregunta, int idRespuesta){
         //verificado es un booleano que te dice si es correcta o no
         ViewBag.verificado=Juego.VerificarRespuesta(idPregunta, idRespuesta);
+        
         return View();
+
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
