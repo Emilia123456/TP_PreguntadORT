@@ -62,11 +62,21 @@ public class HomeController : Controller
         }
     }
  // RESOLVER
-    [HttpPost] public IActionResult VerificarRespuesta(int idPregunta, int idRespuesta){
+    [HttpPost] public IActionResult VerificarRespuesta(int idPregunta, int idRespuesta, string contenido){
         //verificado es un booleano que te dice si es correcta o no
-        ViewBag.verificado=Juego.VerificarRespuesta(idPregunta, idRespuesta);
-        
-        return View();
+        bool verificado=false;
+        string TXT;
+        string TXTcont="";
+        verificado=Juego.VerificarRespuesta(idPregunta, idRespuesta, contenido);
+        if(verificado=true){
+            TXT="¡Respuesta correcta!!";
+            TXTcont="Se te suman 50 puntos";
+        }else{
+            TXT="Respuesta incorrecta :(";
+        }
+        ViewBag.txt=TXT;
+        ViewBag.txtCont=TXTcont;
+        return View("Respuesta");
 
     }
 

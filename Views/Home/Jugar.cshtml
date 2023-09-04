@@ -15,11 +15,11 @@
                 <form action="VerificarRespuesta" method="post" class="form">
                     @{
                             foreach (Respuestas opcion in @ViewBag.SigRespuesta){
-                                <input type="button" value=@opcion.Contenido >
+                                <input type="button" value="@opcion.Contenido" name="contenido">
                             }
                     }
                     <div class="boton">
-                        <button type="submit" class="boton">Enviar</button>
+                        <button type="submit" href="@Url.Action('VerificarRespuesta'), new {contenido = resp.Contenido})" class="boton">Enviar</button>
                     </div>
                 </form>
                 

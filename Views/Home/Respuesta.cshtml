@@ -1,0 +1,19 @@
+<body class="body-juego">
+        <div class="centrador">
+          <img src="Imagenes/logo.png" alt="">
+            <div class="juego-contenedor">
+                <div class="pie-de-pagina">
+                     <h2>@ViewBag.username</h2>
+                    <h2>Puntaje actual: @ViewBag.puntajeActual</h2>
+                </div>
+                <div class="pregunta-contenedor">
+                    <h1>@ViewBag.txt</h1>
+                    <h2>@ViewBag.txtCont</h2>
+                </div>
+                <div class="boton-siguiente">
+                    <a asp-area="" asp-controller="Home" asp-action="Jugar">Siguiente pregunta</a>
+                </div>
+            </div>
+        </div>
+        
+</body>
