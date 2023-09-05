@@ -12,17 +12,21 @@
                     <h2>@ViewBag.SigPregunta.Enunciado</h2>
                 </div>
                             
-                <form action="VerificarRespuesta" method="post" class="form">
-                    @{
-                            foreach (Respuestas opcion in @ViewBag.SigRespuesta){
-                                <input type="button" value="@opcion.Contenido" name="contenido">
-                            }
-                    }
-                    <div class="boton">
-                        <button type="submit" href="@Url.Action('VerificarRespuesta'), new {contenido = resp.Contenido})" class="boton">Enviar</button>
-                    </div>
-                </form>
-                
+                         <form action="VerificarRespuesta" method="post" class="form">
+    @foreach (Respuestas opcion in ViewBag.SigRespuesta)
+    {
+        <div class="boton">
+            <a href='@Url.Action("VerificarRespuesta", "Home", new { contenido = opcion.Contenido, idPregunta = opcion.idPregunta, idRespuesta = opcion.idRespuesta})'>@opcion.Contenido</a>
+        </div>
+        <input type="hidden" name="contenido" value="@opcion.Contenido">
+    }
+    <div class="boton">
+        <input type="submit" value="Enviar" class="boton">
+    </div>
+</form>
+
+            
+
 
                     @* <form action="">
                       <input type="button" value="Intel 9">
