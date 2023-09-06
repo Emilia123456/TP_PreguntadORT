@@ -60,15 +60,14 @@ public static class Juego{
 
     public static bool VerificarRespuesta(int idPregunta, int idRespuesta){
         bool ok = false;
-        int id=0;
-        if(_respuestas[id].Correcta == true &&  idPregunta == _respuestas[idRespuesta].idPregunta)
-        {   ok=true;
+        if(_respuestas[idRespuesta].Correcta == true &&  idPregunta == _respuestas[idRespuesta].idPregunta)
+        {  
+            ok=true;
             _puntajeActual = _puntajeActual+50;
             _cantidadPreguntasCorrectas++;
             
         }
         _cantidadPreguntas++;
-        //_preguntas;
         return ok;
     }
 }
