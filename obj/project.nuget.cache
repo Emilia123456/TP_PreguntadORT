@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Hwm6SOFtBhNfubw2vCDLYeeMZohhFcU7wpv9CRp4/rB1SW/eE8/t4WKthf0Gr11KSronghsZAM8YnwnTdP8auA==",
+  "dgSpecHash": "wxF7wMpgHsaZa9e21JYeHLXhaEbRy6hi/ZgzgKQv2Wbva+sDferuNfbtfd8tQxDf0ah7dCQv3FXSYbL4P7aEzg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\47572192\\Downloads\\des\\TP_PreguntadORT\\TP_PreguntadOrt.csproj",
+  "projectFilePath": "C:\\Users\\47572192\\Downloads\\Nueva carpeta\\TP_PreguntadORT\\TP_PreguntadOrt.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\47572192\\.nuget\\packages\\dapper\\2.0.143\\dapper.2.0.143.nupkg.sha512",
     "C:\\Users\\47572192\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",

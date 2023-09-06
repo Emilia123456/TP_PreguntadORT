@@ -12,11 +12,11 @@
                     <h2>@ViewBag.SigPregunta.Enunciado</h2>
                 </div>
                             
-                         <form action="VerificarRespuesta" method="post" class="form">
+<form action="VerificarRespuesta" method="post" class="form">
     @foreach (Respuestas opcion in ViewBag.SigRespuesta)
     {
         <div class="boton">
-            <a href='@Url.Action("VerificarRespuesta", "Home", new { contenido = opcion.Contenido, idPregunta = opcion.idPregunta, idRespuesta = opcion.idRespuesta})'>@opcion.Contenido</a>
+        <a href='@Url.Action("VerificarRespuesta", "Home", new { idPregunta = opcion.idPregunta, idRespuesta = opcion.idRespuesta })'>@opcion.Contenido</a>
         </div>
         <input type="hidden" name="contenido" value="@opcion.Contenido">
     }
@@ -24,6 +24,8 @@
         <input type="submit" value="Enviar" class="boton">
     </div>
 </form>
+
+
 
             
 

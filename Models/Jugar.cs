@@ -58,13 +58,9 @@ public static class Juego{
         return respuestas;
    }
 
-    public static bool VerificarRespuesta(int idPregunta, int idRespuesta, string contenido){
+    public static bool VerificarRespuesta(int idPregunta, int idRespuesta){
         bool ok = false;
         int id=0;
-        foreach (Respuestas resp in Juego._respuestas){
-            if(resp.Contenido==contenido)
-            resp.idRespuesta=id;
-        }
         if(_respuestas[id].Correcta == true &&  idPregunta == _respuestas[idRespuesta].idPregunta)
         {   ok=true;
             _puntajeActual = _puntajeActual+50;
