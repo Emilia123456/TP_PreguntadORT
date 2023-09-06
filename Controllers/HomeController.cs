@@ -55,7 +55,7 @@ public class HomeController : Controller
         ViewBag.cantidadPreguntas = Juego._cantidadPreguntas;
         if(Juego._preguntas!=null){
             ViewBag.SigRespuesta=Juego.ObtenerProximasRespuestas( ViewBag.SigPregunta.idPregunta);
-
+            
             return View("Jugar");   
         }else{
             return View("Fin");
@@ -70,14 +70,16 @@ public IActionResult VerificarRespuesta(int idPregunta, int idRespuesta)
         string TXT;
         string TXTcont="";
         ok=Juego.VerificarRespuesta(idPregunta, idRespuesta);
-        if(ok=true){
+        if(ok){
             TXT="¡Respuesta correcta!!";
             TXTcont="Se te suman 50 puntos";
         }else{
             TXT="Respuesta incorrecta :(";
         }
-        ViewBag.txt=TXT;
+       
         ViewBag.txtCont=TXTcont;
+        ViewBag.username = Juego._username; 
+        ViewBag.puntajeActual = Juego._puntajeActual;
         return View("Respuesta");
 }
 

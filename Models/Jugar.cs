@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Authentication.OAuth.Claims;
+
 public static class Juego{
     public static string _username {get; set;}
     public static int _puntajeActual {get; set;}
@@ -60,14 +62,24 @@ public static class Juego{
 
     public static bool VerificarRespuesta(int idPregunta, int idRespuesta){
         bool ok = false;
-        if(_respuestas[idRespuesta].Correcta == true &&  idPregunta == _respuestas[idRespuesta].idPregunta)
-        {  
-            ok=true;
-            _puntajeActual = _puntajeActual+50;
-            _cantidadPreguntasCorrectas++;
-            
-        }
-        _cantidadPreguntas++;
+        foreach (Respuestas res in _respuestas){
+            if (res.idRespuesta == idRespuesta){
+                if(res.Correcta && idPregunta == res.idPregunta)
+                {
+                    ok=true;
+                    _puntajeActual = _puntajeActual+50;
+                    _cantidadPreguntasCorrectas++;
+                    // foreach (Preguntas preg in _preguntas){
+                    //     if (preg.idPregunta == idPregunta){
+                    //         _preguntas.Remove(preg);
+                    //     
+                    }
+                    }
+                }
+            }
+            _cantidadPreguntas++;
         return ok;
+                }
+        
     }
 }

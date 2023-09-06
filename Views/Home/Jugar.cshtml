@@ -11,40 +11,13 @@
                     <h1>Pregunta @ViewBag.cantidadPreguntas</h1>
                     <h2>@ViewBag.SigPregunta.Enunciado</h2>
                 </div>
-                            
-<form action="VerificarRespuesta" method="post" class="form">
-    @foreach (Respuestas opcion in ViewBag.SigRespuesta)
-    {
-        <div class="boton">
-        <a href='@Url.Action("VerificarRespuesta", "Home", new { idPregunta = opcion.idPregunta, idRespuesta = opcion.idRespuesta })'>@opcion.Contenido</a>
-        </div>
-        <input type="hidden" name="contenido" value="@opcion.Contenido">
-    }
-    <div class="boton">
-        <input type="submit" value="Enviar" class="boton">
-    </div>
-</form>
-
-
-
-            
-
-
-                    @* <form action="">
-                      <input type="button" value="Intel 9">
-                      <input type="button" value="Ryzen 5">
-                      <input type="button" value="Intel 7">
-                      <input type="button" value="AMD athlon">
-                      <div class="boton-juego">
-                          <a href="RespuestaCorrecta.html">Responder</a>
-                      </div>
-                      
-                    </form> *@
-                    
-                </div>
-
+                                       
+                @foreach (Respuestas opcion in ViewBag.SigRespuesta)
+                {
+                    <div class="boton">
+                        <a href='@Url.Action("VerificarRespuesta", "Home", new { idPregunta = opcion.idPregunta, idRespuesta = opcion.idRespuesta })'>@opcion.Contenido</a>
+                    </div>
+                }
             </div>
-
         </div>
-        
 </body>
