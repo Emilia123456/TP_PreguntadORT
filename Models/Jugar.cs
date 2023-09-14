@@ -60,29 +60,34 @@ public static class Juego{
         return respuestas;
    }
 
-public static bool VerificarRespuesta(int idPregunta, int idRespuesta)
-{
-    bool ok = false;
-    
-    foreach (Respuestas res in _respuestas)
+    public static bool VerificarRespuesta(int idPregunta, int idRespuesta)
     {
-        if (res.idRespuesta == idRespuesta)
+        bool ok = false;
+        
+        foreach (Respuestas res in _respuestas)
         {
-            Console.WriteLine("res.Correcta: " + res.Correcta);
-            if (res.Correcta==true)
+            if (res.idRespuesta == idRespuesta)
             {
-                ok = true;
-                _puntajeActual = _puntajeActual + 50;
-                _cantidadPreguntasCorrectas++;
-            }
+                if (res.Correcta==true)
+                {
+                    ok = true;
+                    _puntajeActual = _puntajeActual + 50;
+                    _cantidadPreguntasCorrectas++;
+                }
+        }
+        
+        
     }
-    
-    
+    _cantidadPreguntas = _cantidadPreguntas + 1;
+        return ok;
+    }
+
+  public static void EliminarPregunta(int idPregunta)
+{
+    //funciona pero hay que frenarlo cuando se cae
+    _preguntas.RemoveAll(pregunta => pregunta.idPregunta == idPregunta);
 }
-Console.WriteLine("ok=" + ok);
-_cantidadPreguntas = _cantidadPreguntas + 1;
-    return ok;
+
 }
-}
-    
+
 

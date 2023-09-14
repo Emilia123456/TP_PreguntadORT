@@ -82,7 +82,8 @@ public IActionResult VerificarRespuesta(int idPregunta, int idRespuesta)
             ViewBag.txtCont=TXTcont;
             ViewBag.txt=TXT;
         }
-       
+        //hacer un if para que no se caiga del vector _preguntas, y ganar cuando termines :)
+       Juego.EliminarPregunta(idPregunta);
         
         ViewBag.username = Juego._username; 
         ViewBag.puntajeActual = Juego._puntajeActual;
