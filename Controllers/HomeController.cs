@@ -70,14 +70,20 @@ public IActionResult VerificarRespuesta(int idPregunta, int idRespuesta)
         string TXT;
         string TXTcont="";
         ok=Juego.VerificarRespuesta(idPregunta, idRespuesta);
-        if(ok){
+        
+        if (ok==false){
+            TXT="Respuesta incorrecta :(";
+            ViewBag.txtCont=TXTcont;
+            ViewBag.txt=TXT;
+        }
+        if(ok==true){
             TXT="¡Respuesta correcta!!";
             TXTcont="Se te suman 50 puntos";
-        }else{
-            TXT="Respuesta incorrecta :(";
+            ViewBag.txtCont=TXTcont;
+            ViewBag.txt=TXT;
         }
        
-        ViewBag.txtCont=TXTcont;
+        
         ViewBag.username = Juego._username; 
         ViewBag.puntajeActual = Juego._puntajeActual;
         return View("Respuesta");
